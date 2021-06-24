@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Player Details</title>
+        <style>
+            .header{
+                padding-right: 50px;
+                align-content: center;
+                
+            }
+            label{
+                font-style: italic;
+                color: #708090;
+            }
+            p{
+                margin: 15px 0 0 200px;
+            }
+            sup{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="width:  725px; height: 50px; border:1px solid #000; transform: translate(-50%,-50%); position: absolute; top: 4%; left: 50%; background-color: rgb(50, 106, 179);">
+            <h2 style="text-align: center; color: white">Player Details</h2>
+        </div>
+        <div style="width:  725px; height: 625px; border:1px solid #000; transform: translate(-50%,-50%); position: absolute; top: 50%; left: 50%; background-color: rgb(142, 191, 231);">
+            <form action="">
+                <p>
+                    <label>Name<sup>*  </sup>
+                        <input type="text" class="header" style="margin: 0 0 0 50px;" name="myname" size="24" maxlength="25" placeholder="Enter your name" />
+                    </label>
+                </p>
+                <p>
+                    <label>DOB<sup>*  </sup>
+                        <input type="text" class="header" style="margin: 0 0 0 54px;" name="dob" size="24" maxlength="25" pattern="\d{1,2}/\d{1,2}/\{4}" placeholder="DD/MM/YY" />
+                    </label>
+                </p>
+                <p>
+                    <label>Age<sup>*  </sup>
+                        <input type="text" class="header" style="margin: 0 0 0 60px;" name="age" size="24" maxlength="25" placeholder="Enter your age" />
+                    </label>
+                </p>
+                <p>
+                    <label>Email Id<sup>*  </sup>
+                        <input type="text" class="header" style="margin: 0 0 0 33px;" name="email" size="24" maxlength="25" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="abc12@xyz.com"/>
+                    </label>
+                </p>
+                <p>
+                    <label>Country<sup>*  </sup></label>
+                        <select class="header" style="margin: 0 0 0 38px;" name="country">
+                            <option>India</option>
+                            <option>Newzealand</option>
+                            <option>Australia</option>
+                            <option>England</option>
+                            <option>South Africa</option>
+                            <option>Sri Lanka</option>
+                        </select>
+                </p>
+                <p>
+                    <label>Skill<sup>*  </sup>
+                        <label><input type="checkbox" class="header" style="margin: 0 0 0 62px;" name="skill"/>Batting</label>
+                        <label><input type="checkbox" name="skill"/>Bowling</label>
+                    </label>
+                </p>
+                <p>
+                    <label>Bat Style<sup>*  </sup>
+                        <label><input type="radio" class="header" name="skill" style="margin: 0 0 0 35px;"/>Right Handed</label>
+                        <label><input type="radio" name="skill"/>Left Handed</label>
+                    </label>
+                </p>
+                <p>
+                    <label>Bowl Style<sup>*  </sup>
+                        <label><input type="radio" class="header" name="skill" style="margin: 0 0 0 26px;"/>Right Handed</label>
+                        <label><input type="radio" name="skill"/>Left Handed</label>
+                    </label>
+                </p>
+                <p>
+                    <label>Matches<sup>*  </sup>
+                        <input type="text" class="header" name="matches" size="24" maxlength="25" placeholder="Matches Played" style="margin: 0 0 0 42px;"/>
+                    </label>
+                </p>
+                <p>
+                    <label>Runs<sup>*  </sup>
+                        <input type="text" class="header" name="runs" size="24" maxlength="25" placeholder="Total runs scored" style="margin: 0 0 0 62px;"/>
+                    </label>
+                </p>
+                <p>
+                    <label>Wickets<sup>*  </sup>
+                        <input type="text" class="header" name="wickets" size="24" maxlength="25" placeholder="Wickets" style="margin: 0 0 0 48px;"/>
+                    </label>
+                </p>
+                <p>
+                    <label>Achievements</label><textarea style="vertical-align: middle;  margin: 0 0 0 20px;" name="achieve" placeholder="Your Achievements in Cricket" rows="5" cols="35">
+                            </textarea>
+                </p>
+            </form>
+        </div>
+        <div style="width:  725px; height: 50px; border:1px solid #000; transform: translate(-50%,-50%); position: absolute; top: 96%; left: 50%; background-color: rgb(142, 181, 231);">
+            <form action=" ">
+                <p style="margin: 15px 0 0 300px;">
+                    <input type="submit" value="Submit"/>
+                    <input type="reset" value="Reset"/>
+                </p>
+            </form>
+        </div>
+    </body>
+</html>
