@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Match Summary</title>
+        <style>
+            .header{
+                padding-right: 50px;
+                align-content: center;
+    
+            }
+            label{
+                font-style: italic;
+                color: #708090;
+            }
+            p{
+                margin: 15px 0 0 200px;
+            }
+            sup{
+                color: red;
+            }
+
+            h2{
+                text-align: center;
+            }
+            h4{
+                text-align: left;
+                margin-left: 200px;
+                margin-top: 2px;
+            }
+
+            div{
+                width:  725px; 
+                height: 450px; 
+                border:1px solid #000; 
+                transform: translate(-50%,-50%); 
+                position: absolute; 
+                top: 50%; 
+                left: 50%; 
+                background-color: rgb(231, 216, 77);
+            }
+
+            .form-inline{
+                display: flex;
+                flex-flow: column;
+                padding-right: 50px; 
+            }
+
+            .form-inline label{
+                margin: 5px 10px 5px 10px;
+            }
+            .form-inline input{
+                vertical-align: middle;
+                margin: 5px 10px 5px 15px;
+                padding: 4px 25px;
+                border-radius: 4px;
+                background-color:white;
+                border-style: solid;
+            }
+
+        </style>
+        
+        <script type="text/javascript"> 
+            finder=function()
+                        {
+                            var team1 = document.getElementById('teamA').value;
+                            var team2 = document.getElementById('teamB').value;
+                            var date = document.getElementById('date').value;
+                            var time = document.getElementById('time').value;
+                            var score1 = document.getElementById('scoreA').value;
+                            var score2 = document.getElementById('scoreB').value;
+                            if(team1.length>50 || team2.length>50)
+                                {
+                                    alert("Team name should not exceed 50 characters");
+                                    return;
+                                }
+                            var a=team1.toLowerCase();
+                            var teamname=a.search(/^[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]/);
+                            var b=team2.toLowerCase();
+                            teamname=b.search(/^[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]/);
+                            if(teamname==0)
+                                document.write("Team name is valid\n");
+                            else
+                                document.write("Team name is invalid\n");
+                            var dateformat = date.search(/^(0?[1-9]|1[0-2])[\/](0?[1-9]|[1-2][0-9]|3[01])[\/]\d{4}$/);
+                            if(dateformat==0)
+                                document.write("Date is valid\n");
+                            else
+                                document.write("Date is invalid\n");
+                            var timeformat = time.search(/^(?:2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]$/);
+                            if(timeformat==0)
+                                document.write("Time is valid\n");
+                            else
+                                document.write("Time is invalid\n");
+                            var scoreformat = score1.search(/^(0?[0-9]|1[0-9]|2[0-9])[\/](0?[0-9]|1[0-9])$/);
+                            scoreformat = score2.search(/^(0?[0-9]|[0-9]|[0-9])[\/](0?[0-9]|[0-9])$/);
+                            if(scoreformat==0)
+                                document.write("Score is valid\n");
+                            else
+                                document.write("Score is invalid\n");
+                        }
+                        function match() {
+
+                            var x, y, a, b;
+                            var a = document.getElementsByName("teamA")[0].value;
+                            var b = document.getElementsByName("teamB")[0].value;
+                            x = document.getElementById("scoreA").value;
+                            y = document.getElementById("scoreB").value;
+                            m = x.split("/")
+                            n = y.split("/")
+
+                            if (a == b) {
+                                alert("Team names should be different");
+                            } else if (m > n) {
+
+                                document.getElementById('res').innerHTML = "Winning Team: " + a + ""
+                                return true;
+                            } else if (m < n) {
+                                document.getElementById('res').innerHTML = "Winning Team: " + b + ""
+
+                            }
+                        }
+                        function display(){
+                            document.getElementById('res').innerHTML = "Winning Team : RCB";
+                        }
+    </script> 
+    </head>
+    <body>
+        <div>
+            <form action="" class="form-inline">
+                <h2>Match Summary</h2>
+                <p>
+                    <label>Team A <sup>*  </sup>
+                        <input type="text" class="header" style="margin: 0 0 0 40px;" name="teamA" size="24" maxlength="25" placeholder="Team A" required/>
+                    </label>
+                </p>
+                <p>
+                    <label>Team B <sup>*  </sup>
+                        <input type="text" class="header" style="margin: 0 0 0 40px;" name="teamB" size="24" maxlength="25" placeholder="Team B" required/>
+                    </label>
+                </p>
+                <p>
+                    <label>Date<sup>*  </sup>
+                        <input type="text" class="header" style="margin: 0 0 0 60px;" id="date" size="24" maxlength="25" placeholder="DD/MM/YYYY" required/>
+                    </label>
+                </p>
+                <p>
+                    <label>Time<sup>*  </sup>
+                        <input type="text" class="header" style="margin: 0 0 0 60px;" id="time" size="24" maxlength="25" placeholder="HH:MM:SS" required/>
+                    </label>
+                </p>
+                <p>
+                    <label>Team A Score <sup>*  </sup>
+                        <input type="text" class="header" id="scoreA" size="24" maxlength="25" placeholder="Runs/Wkts" style="margin: 0 0 0 2px;" required/>
+                    </label>
+                </p>
+                <p>
+                    <label>Team B Score <sup>*  </sup>
+                        <input type="text" class="header" id="scoreB" size="24" maxlength="25" placeholder="Runs/Wkts" style="margin: 0 0 0 2px;" required/>
+                    </label>
+                </p>
+                <p>
+                    <input type="button" value="save" id="save" onclick="match()">
+                </p>
+            </form>
+            <p>
+                <h4 id='res'></h4>
+            </p>
+            
+        </div>
+    </body>
+</html>
